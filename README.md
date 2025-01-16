@@ -15,7 +15,7 @@ This project is a simple Lorem Ipsum text generator website, designed to help us
 
 **Installation**
 Clone the repository to your local machine:
-git clone https://github.com/yourusername/lorem-ipsum-generator.git
+git clone https://github.com/ujju1124/Lorem_Ipsum_Generator_Host
 Open index.html in your browser to view the website.
 
 **Contributing**
