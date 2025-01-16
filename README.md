@@ -5,8 +5,11 @@ This project is a simple Lorem Ipsum text generator website, designed to help us
 
 **Features**
 **Dynamic Lorem Ipsum Generation**: Users can customize the number of paragraphs and words in the generated text.
+
 **Responsive Design**: The website is fully responsive, ensuring a seamless experience across different devices.
+
 **User-Friendly Interface**: Clean, modern design with easy-to-use input fields for generating Lorem Ipsum text.
+
 
 **Technologies Used**
 **HTML**: Structure and content of the website.
