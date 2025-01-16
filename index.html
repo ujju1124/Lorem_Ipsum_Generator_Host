@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lorem Ipsum Generator</h1>
+
+        <label for="formatChoice">Choose format:</label>
+        <select id="formatChoice" onchange="updatePlaceholder()">
+            <option value="sentences">Sentences</option>
+            <option value="words">Words</option>
+            <option value="paragraphs">Paragraphs</option>
+        </select>
+        
+        <br><br>
+
+        <label for="paragraphCount">Format Length:
+        </label>
+        <input type="number" id="paragraphCount" placeholder="Enter number of sentences">
+        
+        <button onclick="generateLorem()">Generate</button>
+
+        <div id="outputBox" style="display:none;">
+            <h2>Generated Text</h2>
+            <div id="output"></div>
+            <!-- Copy to Clipboard Button -->
+            <button id="copyButton" class="small-btn" onclick="copyToClipboard()">
+                <img src="Images/copy-link.png" alt="Copy Logo" class="copy-logo"> 
+                Copy
+                <span id="copied-symbol" class="symbol" style="display: none;">✔;</span> <!-- Checkmark symbol -->
+            </button>
+            
+    </div>
+
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="Images/2rhGgOHIy5GSMUE9fUm6odeaVHg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <footer class="copyright">
+        <p>&copy; 2025 Ujwal Dahal. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

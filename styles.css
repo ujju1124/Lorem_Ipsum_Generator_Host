@@ -1,0 +1,243 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@500&family=Baloo+2&family=Bebas+Neue&family=Lato:ital@1&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:wght@500&family=Oswald&family=Poppins:wght@400;700&family=Roboto:wght@500&family=Workbench&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('Images/loremIpusm.jpg'), url('Images/BackgroundImage.webp');
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: fixed, scroll;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    max-width: 855px;
+    width: 92%;
+    padding: 90px;
+    background-color: #fff;
+    border-radius: 35px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 15px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 20px auto;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Smoother hover transition */
+    overflow: hidden;
+    background-image: url('Images/BackgroundImage.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1; /* Keeps the container above the footer */
+}
+
+
+
+/* Optional: Adding a light gradient to the container */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(160, 144, 144, 0.3), rgba(115, 111, 111, 0.1));
+    border-radius: 35px;
+    z-index: -1; /* Places gradient behind the content */
+}
+
+
+/* Header */
+h1 {
+    font-size: 37px;
+    margin-bottom: 30px;
+    color: #333;
+    color: white;
+    font-family: "Workbench", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "BLED" 0,
+    "SCAN" 0;
+    
+}
+
+/* Form Elements */
+select, input, button {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+select:focus, input:focus, button:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+select, input {
+    background-color: #2d2a2a;
+    color:#f7f6f6;
+}
+
+/* Styling the button */
+button {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #204808;
+    transform: translateY(-2px);
+}
+
+/* Output Box Layout */
+#outputBox {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #353131;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative; /* Add relative positioning */
+    padding-top: 40px; /* Add some space to the top */
+}
+
+
+/* Ensure output text is properly styled */
+#output {
+    font-size: 18px;
+    color: #f4f3f3;
+    display: block;
+    margin: 0;
+    font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight:200;
+  font-style: normal;
+}
+
+/* Heading in output box */
+#outputBox h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#outputBox p {
+    margin-bottom: 20px; /* Adds a gap of 20px after each paragraph */
+    line-height: 1.6; /* Increases line spacing within paragraphs for better readability */
+}
+
+
+/* Copy Button at the top right inside Output Box */
+#copyButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 10px;
+    background-color: #15c73b;
+    color: rgb(231, 229, 229);
+    font-weight: bold;
+    border: 1px solid #9df7b3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between logo and text */
+    width: 15%;
+}
+
+.copy-logo {
+    width: 16px; /* Set the logo size */
+    height: 16px;
+}
+
+.symbol {
+    font-size: 18px;
+    color: green;
+    margin-left: 5px;
+}
+
+
+#copyButton:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Optional: Styling for alert feedback */
+.copied {
+    background-color: #008CBA;
+    color: white;
+}
+
+/* Video Background */
+#backgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Place the video behind all other content */
+    object-fit: cover; /* Ensures the video covers the entire viewport */
+    opacity: 0.7; /* Optional: Adjust transparency */
+    pointer-events: none; /* Prevent interaction with the video */
+}
+
+/* Footer Styles */
+
+footer.copyright {
+    background-color: #232121; /* Dark background for the footer */
+    color: rgba(235, 254, 255, 0.8); /* Reduced opacity for lighter appearance */
+    text-align: center; /* Center align the text */
+    padding: 15px 10px; /* Padding for spacing */
+    font-family: 'Roboto', sans-serif; /* Consistent font styling */
+    font-weight: 300; /* Lighter font weight */
+    position:fixed; /* Ensure it sticks to the bottom */
+    bottom: 0; /* Align it to the bottom of the viewport */
+    left: 0; /* Start at the left edge */
+    width: 100%; /* Stretch to full width */
+    z-index: 1; /* Keeps footer under the container */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for a floating effect */
+}
+
+footer p {
+    opacity: 0.8; /* Makes the text slightly transparent */
+    font-size: 14px; /* Optional: Adjust font size if needed */
+    color: rgba(251, 249, 249, 0.9); /* Slightly muted color for text */
+}
