@@ -1,3 +1,4 @@
+
 // Function to update the placeholder text based on format choice
 function updatePlaceholder() {
     const formatChoice = document.getElementById("formatChoice").value;
@@ -8,7 +9,7 @@ function updatePlaceholder() {
     } else if (formatChoice === "sentences") {
         paragraphCountInput.placeholder = "Enter number of sentences";
     } else if (formatChoice === "paragraphs") {
-        paragraphCountInput.placeholder = "Enter number of paragraphs"; // New placeholder for paragraphs
+        paragraphCountInput.placeholder = "Enter number of paragraphs";
     }
 }
 
@@ -53,7 +54,7 @@ function generateLorem() {
         }
         result = words.slice(0, wordCount).join(" ");
     } else if (formatChoice === "sentences") {
-        let sentenceCount = paragraphCount; // Use the input as the sentence count
+        let sentenceCount = paragraphCount;
         let sentences = [];
         while (sentences.length < sentenceCount) {
             const randomSentence = loremSentences[Math.floor(Math.random() * loremSentences.length)];
@@ -73,48 +74,41 @@ function generateLorem() {
         }
         result = paragraphs.join(""); // No line breaks needed since <p> handles spacing
     }
-    
+
     const outputBox = document.getElementById("outputBox");
     outputBox.style.display = "block"; // Make the output box visible
 
     output.innerHTML = result; // Display result inside output box
 }
 
-// Call updatePlaceholder on page load to set the correct placeholder
-document.addEventListener("DOMContentLoaded", updatePlaceholder);
-
-
-
 // Function to copy the text inside the output box to clipboard
-    function copyToClipboard() {
-        var textToCopy = document.getElementById("output").innerText;
-        var tempInput = document.createElement("input");
-        document.body.appendChild(tempInput);
-        tempInput.value = textToCopy;
-        tempInput.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempInput);
-    
-        // Change button text and show the checkmark symbol
-        const copyButton = document.getElementById("copyButton");
-        copyButton.textContent = "✔ Copied!";
-        const symbol = document.getElementById("copied-symbol");
-        symbol.style.display = "inline"; // Show the checkmark symbol
-    
-        // Optionally, change the button style to indicate success
-        copyButton.classList.add("copied");
-    
-        // Reset button after 1 second
-        setTimeout(() => {
-            copyButton.textContent = ""; // Clear text
-            copyButton.appendChild(document.querySelector('.copy-logo')); // Re-append logo
-            copyButton.appendChild(symbol); // Re-append the checkmark symbol
-            copyButton.textContent = "Copy"; // Reset text
-            symbol.style.display = "none"; // Hide the checkmark symbol
-            copyButton.classList.remove("copied");
-        }, 1000);
-    }
-    
+// Function to copy the text inside the output box to clipboard
+function copyToClipboard() {
+    const outputText = document.getElementById("output").innerText;
 
-// Call updatePlaceholder on page load to set the correct placeholder
+    // Create a temporary input to copy text
+    const tempInput = document.createElement("input");
+    document.body.appendChild(tempInput);
+    tempInput.value = outputText;
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+
+    // Update the button text
+    const copyButton = document.getElementById("copyButton");
+
+    // Save the original HTML
+    const originalHTML = copyButton.innerHTML;
+
+    copyButton.innerHTML = "✔ Copied!";
+
+    // Reset the button HTML after 500ms
+    setTimeout(() => {
+        copyButton.innerHTML = originalHTML;
+    }, 500);
+}
+
+
+// Call updatePlaceholder on page load
 document.addEventListener("DOMContentLoaded", updatePlaceholder);
+
