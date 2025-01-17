@@ -20,8 +20,7 @@
         
         <br><br>
 
-        <label for="paragraphCount">Format Length:
-        </label>
+        <label for="paragraphCount">Format Length:</label>
         <input type="number" id="paragraphCount" placeholder="Enter number of sentences">
         
         <button onclick="generateLorem()">Generate</button>
@@ -30,12 +29,13 @@
             <h2>Generated Text</h2>
             <div id="output"></div>
             <!-- Copy to Clipboard Button -->
-            <button id="copyButton" class="small-btn" onclick="copyToClipboard()">
+            <button id="copyButton" class="small-btn original-style" onclick="copyToClipboard()">
                 <img src="Images/copy-link.png" alt="Copy Logo" class="copy-logo"> 
                 Copy
-                <span id="copied-symbol" class="symbol" style="display: none;">✔;</span> <!-- Checkmark symbol -->
+                <span id="copied-symbol" class="symbol" style="display: none;">✔</span>
             </button>
-            
+        </div>
+
     </div>
 
     <video autoplay muted loop id="backgroundVideo">
