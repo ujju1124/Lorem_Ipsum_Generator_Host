@@ -184,6 +184,13 @@ button:hover {
     width: 15%;
 }
 
+.original-style {
+    background-color: #f0f0f0; /* Example background */
+    color: #000; /* Example text color */
+    border: 1px solid #ccc; /* Example border */
+}
+
+
 .copy-logo {
     width: 16px; /* Set the logo size */
     height: 16px;
@@ -205,6 +212,8 @@ button:hover {
     background-color: #008CBA;
     color: white;
 }
+
+
 
 /* Video Background */
 #backgroundVideo {
